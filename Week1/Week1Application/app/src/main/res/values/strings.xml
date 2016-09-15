@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Week1Application</string>
+    <string name="first_string">Sup</string>
+    <string name="cs196_is_great">CS196 is Great!</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="blah_blah_blah">blah blah blah</string>
+</resources>
