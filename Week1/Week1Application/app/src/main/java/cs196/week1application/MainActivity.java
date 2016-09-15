@@ -7,16 +7,19 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 public class MainActivity extends AppCompatActivity {
 
     EditText input;
+    TextView firstTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final TextView firstTextView = (TextView) findViewById(R.id.firstTextView);
+        firstTextView = (TextView) findViewById(R.id.firstTextView);
         Button firstButton = (Button) findViewById(R.id.firstButton);
         input = (EditText) findViewById(R.id.edit_text_1);
 
