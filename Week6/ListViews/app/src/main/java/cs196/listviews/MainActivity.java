@@ -7,8 +7,11 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
@@ -37,6 +40,18 @@ public class MainActivity extends AppCompatActivity {
                 User elon = users.get(position);
             }
         });
+
+        mDatabase.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
     }
 
     public void inflateData(ArrayList<User> users){
@@ -44,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
         users.add(new User("Elon Musk", "Male", 45));
         users.add(new User("Hillary Clinton", "Female", 68));
         users.add(new User("Harambe", "Male Gorilla", 17));
+        users.add(new User("Kyle", "Male", 21));
 
         for(User user: users){
             mDatabase.child("users").child(user.getName()).setValue(user);
